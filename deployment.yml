@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apitask
+  labels:
+    app: apitask
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apitask
+  template:
+    metadata:
+      labels:
+        app: apitask
+    spec:
+      containers:
+      - name: apitask
+        image: rakshithbt/apitask:v1
